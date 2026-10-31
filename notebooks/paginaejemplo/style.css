@@ -1,0 +1,137 @@
+
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf8f5;
+    /* Color crema muy suave */
+    color: #4a3728;
+    /* Café oscuro */
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #4a3728;
+    color: #fdf8f5;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Contenedor de la Ruta (Timeline) */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* La línea vertical central */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #d2b48c;
+    /* Color canela/café claro */
+}
+
+/* Cada ítem de la ruta */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    /* Espacio para la línea y el punto */
+}
+
+/* El punto de la ruta */
+.timeline-dot {
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #8b5e3c;
+    border: 4px solid #fdf8f5;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Tarjeta de contenido */
+.timeline-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.location {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #a67c52;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.timeline-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: #4a3728;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #6d5d50;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+    color: #8b5e3c;
+}
+
+/* Responsive: Para pantallas pequeñas */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-dot {
+        left: 7px;
+    }
+}
