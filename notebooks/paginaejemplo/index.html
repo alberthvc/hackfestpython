@@ -1,90 +1,292 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruta del Café - Chiriquí</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ruta del Café en Chiriquí | Fincas y cata en Boquete y Tierras Altas</title>
+    <meta name="description"
+        content="Una ruta de 6 paradas por las mejores fincas de café de Chiriquí, Panamá: Boquete y Tierras Altas.">
+    <meta name="theme-color" content="#2b1d14">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#ruta">Saltar a la ruta</a>
 
-    <header>
-        <h1>Ruta del Café en Chiriquí</h1>
-        <p>Un viaje sensorial por las tierras altas de Panamá</p>
+    <!-- NAVEGACIÓN -->
+    <nav class="nav" aria-label="Principal">
+        <a class="nav__brand" href="#inicio">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3c4.5 0 8 3.6 8 9s-3.5 9-8 9-8-3.6-8-9 3.5-9 8-9Z" fill="currentColor" />
+                <path d="M12 4c-2 3-2 6 0 8s2 5 0 8" fill="none" stroke="#2b1d14" stroke-width="1.6"
+                    stroke-linecap="round" />
+            </svg>
+            Café Chiriquí
+        </a>
+        <ul class="nav__links">
+            <li><a href="#ruta">La ruta</a></li>
+            <li><a href="#consejos">Consejos</a></li>
+            <li><a href="#fuentes">Fuentes</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="inicio">
+        <div class="hero__inner">
+            <p class="hero__eyebrow">Boquete · Tierras Altas · Panamá</p>
+            <h1>Ruta del Café<br><em>en Chiriquí</em></h1>
+            <p class="hero__lead">Seis fincas, un volcán y una taza distinta en cada parada. Un viaje sensorial por las
+                tierras altas donde nace el café Geisha.</p>
+            <a class="btn" href="#ruta">Empezar la ruta</a>
+
+            <dl class="stats">
+                <div>
+                    <dt>Paradas</dt>
+                    <dd>6</dd>
+                </div>
+                <div>
+                    <dt>Zonas</dt>
+                    <dd>2</dd>
+                </div>
+                <div>
+                    <dt>De visitas</dt>
+                    <dd>~16 h</dd>
+                </div>
+            </dl>
+        </div>
     </header>
 
-    <main class="container">
-        <div class="timeline">
+    <main>
+        <!-- RUTA -->
+        <section class="section" id="ruta" aria-labelledby="ruta-titulo">
+            <div class="container">
+                <div class="section__head">
+                    <h2 id="ruta-titulo">Las paradas</h2>
+                    <p>Cinco fincas en Boquete y una extensión a Tierras Altas, a unas 2 horas por carretera.</p>
+                </div>
 
-            <!-- Cafetería 1 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="location">Boquete</span>
-                    <h2>Finca Lérida</h2>
-                    <p>Un clásico de la región. Disfruta de un café de especialidad rodeado de naturaleza exuberante y
-                        senderos históricos.</p>
+                <div class="filters" role="group" aria-label="Filtrar por zona">
+                    <button class="chip is-active" data-filter="all" aria-pressed="true">Todas</button>
+                    <button class="chip" data-filter="boquete" aria-pressed="false">Boquete</button>
+                    <button class="chip" data-filter="tierras-altas" aria-pressed="false">Tierras Altas</button>
+                </div>
+
+                <ol class="timeline" id="timeline">
+
+                    <li class="stop" data-zone="boquete">
+                        <span class="stop__badge" aria-hidden="true">1</span>
+                        <article class="card">
+                            <p class="card__zone">Bajo Boquete</p>
+                            <h3>Finca Dos Jefes</h3>
+                            <p class="card__type">Tour de café orgánico tradicional</p>
+                            <p>Una finca muy valorada en tours de café. Enseña el cultivo orgánico tradicional y es la
+                                primera parada ideal para entender el recorrido de la semilla a la taza.</p>
+                            <p class="card__highlight">Tours en horario de mañana y de tarde.</p>
+                            <ul class="tags">
+                                <li>Orgánico</li>
+                                <li>Tour</li>
+                                <li>~3 h</li>
+                            </ul>
+                            <div class="map">
+                                <iframe src="https://maps.google.com/maps?q=Finca+Dos+Jefes+Boquete+Panam%C3%A1&amp;z=13&amp;output=embed"
+                                    title="Mapa de Finca Dos Jefes" loading="lazy" tabindex="-1"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <a class="map__open" target="_blank" rel="noopener"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Finca+Dos+Jefes+Boquete+Panam%C3%A1"
+                                    aria-label="Abrir Finca Dos Jefes en la app de mapas">
+                                    <span class="map__cta">Abrir en Maps ↗</span>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="stop" data-zone="boquete">
+                        <span class="stop__badge" aria-hidden="true">2</span>
+                        <article class="card">
+                            <p class="card__zone">Palo Alto, Boquete</p>
+                            <h3>Café Kotowa</h3>
+                            <p class="card__type">Finca, cafetería y beneficio histórico</p>
+                            <p>Una de las marcas más reconocidas de Boquete, con cafeterías propias y experiencias con
+                                café Geisha en Finca Cristal. Ideal para probar el café de especialidad de la región.
+                            </p>
+                            <p class="card__highlight">Conserva el beneficio original de 1920.</p>
+                            <ul class="tags">
+                                <li>Geisha</li>
+                                <li>Historia</li>
+                                <li>~2.5 h</li>
+                            </ul>
+                            <div class="map">
+                                <iframe src="https://maps.google.com/maps?q=Caf%C3%A9+Kotowa+Boquete+Panam%C3%A1&amp;z=13&amp;output=embed"
+                                    title="Mapa de Café Kotowa" loading="lazy" tabindex="-1"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <a class="map__open" target="_blank" rel="noopener"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Caf%C3%A9+Kotowa+Boquete+Panam%C3%A1"
+                                    aria-label="Abrir Café Kotowa en la app de mapas">
+                                    <span class="map__cta">Abrir en Maps ↗</span>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="stop" data-zone="boquete">
+                        <span class="stop__badge" aria-hidden="true">3</span>
+                        <article class="card">
+                            <p class="card__zone">Alto Quiel, Boquete</p>
+                            <h3>Finca Lérida</h3>
+                            <p class="card__type">Finca histórica con cafetería y senderos</p>
+                            <p>Un clásico de Boquete con más de 50 años de caficultura sostenible. Combina tour, cata,
+                                cafetería y caminatas entre cafetales y bosque.</p>
+                            <p class="card__highlight">Primera finca en exportar café panameño a Alemania.</p>
+                            <ul class="tags">
+                                <li>Senderos</li>
+                                <li>Cata</li>
+                                <li>~3 h</li>
+                            </ul>
+                            <div class="map">
+                                <iframe src="https://maps.google.com/maps?q=Finca+L%C3%A9rida+Boquete+Panam%C3%A1&amp;z=13&amp;output=embed"
+                                    title="Mapa de Finca Lérida" loading="lazy" tabindex="-1"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <a class="map__open" target="_blank" rel="noopener"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Finca+L%C3%A9rida+Boquete+Panam%C3%A1"
+                                    aria-label="Abrir Finca Lérida en la app de mapas">
+                                    <span class="map__cta">Abrir en Maps ↗</span>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="stop" data-zone="boquete">
+                        <span class="stop__badge" aria-hidden="true">4</span>
+                        <article class="card">
+                            <p class="card__zone">Boquete</p>
+                            <h3>Finca La Milagrosa</h3>
+                            <p class="card__type">Café orgánico de especialidad</p>
+                            <p>Productor muy respetado de café 100% orgánico. Se recorre con una taza en la mano y
+                                destaca por tostar con máquinas que ellos mismos arman con piezas recicladas.</p>
+                            <p class="card__highlight">Tostadoras hechas con partes de autos y computadoras.</p>
+                            <ul class="tags">
+                                <li>Orgánico</li>
+                                <li>Tostado</li>
+                                <li>~2 h</li>
+                            </ul>
+                            <div class="map">
+                                <iframe src="https://maps.google.com/maps?q=Finca+La+Milagrosa+Boquete+Panam%C3%A1&amp;z=13&amp;output=embed"
+                                    title="Mapa de Finca La Milagrosa" loading="lazy" tabindex="-1"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <a class="map__open" target="_blank" rel="noopener"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Finca+La+Milagrosa+Boquete+Panam%C3%A1"
+                                    aria-label="Abrir Finca La Milagrosa en la app de mapas">
+                                    <span class="map__cta">Abrir en Maps ↗</span>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="stop" data-zone="boquete">
+                        <span class="stop__badge" aria-hidden="true">5</span>
+                        <article class="card">
+                            <p class="card__zone">Alto Quiel, Boquete</p>
+                            <h3>Elida Estate</h3>
+                            <p class="card__type">Geisha de clase mundial · Familia Lamastus</p>
+                            <p>Finca familiar ligada a algunos de los Geisha más premiados de Panamá. La visita incluye
+                                cata del café que ha liderado el Best of Panama.</p>
+                            <p class="card__highlight">Sus tours incluyen transporte desde Boquete. Reserva antes.</p>
+                            <ul class="tags">
+                                <li>Geisha</li>
+                                <li>Premiado</li>
+                                <li>~3 h</li>
+                            </ul>
+                            <div class="map">
+                                <iframe src="https://maps.google.com/maps?q=Elida+Estate+Boquete+Panam%C3%A1&amp;z=13&amp;output=embed"
+                                    title="Mapa de Elida Estate" loading="lazy" tabindex="-1"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <a class="map__open" target="_blank" rel="noopener"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Elida+Estate+Boquete+Panam%C3%A1"
+                                    aria-label="Abrir Elida Estate en la app de mapas">
+                                    <span class="map__cta">Abrir en Maps ↗</span>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="stop" data-zone="tierras-altas">
+                        <span class="stop__badge" aria-hidden="true">6</span>
+                        <article class="card card--extra">
+                            <p class="card__zone">Tierras Altas · Volcán</p>
+                            <h3>Finca Sophia</h3>
+                            <p class="card__type">Extensión de ruta · Familia Hartmann</p>
+                            <p>Unas 20 hectáreas en la finca de café más alta de Panamá. El visitante puede participar
+                                en la siembra, cosecha, empaque y tostado.</p>
+                            <p class="card__highlight">Entre 1,900 y 2,124 metros de altura.</p>
+                            <ul class="tags">
+                                <li>Altura</li>
+                                <li>Experiencia</li>
+                                <li>~3 h</li>
+                            </ul>
+                            <div class="map">
+                                <iframe src="https://maps.google.com/maps?q=Finca+Sophia+Volc%C3%A1n+Panam%C3%A1&amp;z=13&amp;output=embed"
+                                    title="Mapa de Finca Sophia" loading="lazy" tabindex="-1"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <a class="map__open" target="_blank" rel="noopener"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Finca+Sophia+Volc%C3%A1n+Panam%C3%A1"
+                                    aria-label="Abrir Finca Sophia en la app de mapas">
+                                    <span class="map__cta">Abrir en Maps ↗</span>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+
+                </ol>
+            </div>
+        </section>
+
+        <!-- CONSEJOS -->
+        <section class="section section--dark" id="consejos" aria-labelledby="consejos-titulo">
+            <div class="container">
+                <div class="section__head">
+                    <h2 id="consejos-titulo">Antes de salir</h2>
+                    <p>Tres cosas que hacen la diferencia en esta ruta.</p>
+                </div>
+                <div class="tips">
+                    <article class="tip">
+                        <h3>Reserva con anticipación</h3>
+                        <p>Muchas fincas reciben visitas con cita previa. Confirma horarios y precios directamente
+                            con cada una.</p>
+                    </article>
+                    <article class="tip">
+                        <h3>Ten transporte propio</h3>
+                        <p>Las fincas quedan separadas entre sí. Un auto alquilado o un chofer te da libertad entre
+                            paradas.</p>
+                    </article>
+                    <article class="tip">
+                        <h3>Lleva abrigo</h3>
+                        <p>En las tierras altas el clima es fresco, con temperaturas típicas entre 12 °C y 25 °C.</p>
+                    </article>
                 </div>
             </div>
-
-            <!-- Cafetería 2 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="location">Volcán</span>
-                    <h2>Café de Altura</h2>
-                    <p>Ubicado en las faldas del Volcán Barú, ofrece una vista impresionante y granos cultivados a más
-                        de 1,500 metros.</p>
-                </div>
-            </div>
-
-            <!-- Cafetería 3 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="location">Boquete</span>
-                    <h2>Café Britt</h2>
-                    <p>Ideal para tours de aprendizaje. Conoce todo el proceso, desde la semilla hasta la taza perfecta.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Cafetería 4 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="location">David</span>
-                    <h2>Moka Café</h2>
-                    <p>El punto de encuentro perfecto en la ciudad para probar métodos de extracción modernos y
-                        repostería artesanal.</p>
-                </div>
-            </div>
-
-            <!-- Cafetería 5 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="location">Cerro Punta</span>
-                    <h2>Finca Elida</h2>
-                    <p>Para los amantes del café de especialidad más puro. Un lugar dedicado a la excelencia del cultivo
-                        de altura.</p>
-                </div>
-            </div>
-
-        </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Guía Turística de Chiriquí - Disfruta el aroma.</p>
+    <footer class="footer" id="fuentes">
+        <div class="container">
+            <p class="footer__title">Fuentes</p>
+            <p class="footer__sources">Tourism Panama · ATP Panamá · MIRE · Fodor's · Culture Trip · La Prensa · Panamá
+                América</p>
+            <p class="footer__note">Horarios, precios y disponibilidad pueden cambiar. Confirma con cada finca antes de
+                visitar.</p>
+            <p class="footer__copy">&copy; <span id="year">2026</span> Guía turística de Chiriquí · Disfruta el aroma.
+            </p>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
-```
